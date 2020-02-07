@@ -1,0 +1,11 @@
+@import 'setup';
+@import 'general';
+
+.mainImages{
+    display: flex;
+    .option1,
+    .option2{
+        width: calc(50% - 60px);
+        margin:0 15px;
+    }
+}

@@ -1,0 +1,32 @@
+//
+
+//     font-family: 'Ubuntu', sans-serif;
+
+//     font-family: 'Fjalla One', sans-serif;
+
+html{
+    line-height: 1.5;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 62.5%;
+    background:#a4d3bb;
+}
+
+img{
+    width: 100%;
+}
+
+.wrapper{
+    max-width: 1040px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+p{
+    font-size: 1.6rem;
+}
+h1{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+}
