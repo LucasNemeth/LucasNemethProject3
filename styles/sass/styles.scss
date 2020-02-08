@@ -1,6 +1,10 @@
 @import 'setup';
 @import 'general';
 
+h1{
+    margin-bottom: 0;
+}
+
 .mainImages{
     display: flex;
     .option1,
@@ -8,4 +12,20 @@
         width: calc(50% - 60px);
         margin:0 15px;
     }
+}
+header p {
+    text-align: center;
+}
+
+button{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding:10px;
+    border: none;
+    background: rgb(228, 20, 90);
+    box-shadow: black 2px 2px;
+}
+
+button:hover{
+    background: darken($color: hsl(337, 92%, 25%), $amount: 5);;
 }

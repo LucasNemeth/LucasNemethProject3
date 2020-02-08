@@ -263,6 +263,10 @@ h1 {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 0;
+}
+
 .mainImages {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,4 +277,22 @@ h1 {
 .mainImages .option2 {
   width: calc(50% - 60px);
   margin: 0 15px;
+}
+
+header p {
+  text-align: center;
+}
+
+button {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 10px;
+  border: none;
+  background: #e4145a;
+  -webkit-box-shadow: black 2px 2px;
+          box-shadow: black 2px 2px;
+}
+
+button:hover {
+  background: #620428;
 }
