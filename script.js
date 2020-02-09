@@ -18,15 +18,23 @@ $(function() {
 
     let randomRealImg = Math.floor(Math.random() * 8);
 
-    if (imgChance >= 5){
+    const imgAttribute = () => {
+        if (imgChance >= 5){
         $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
     } else {
         $('.displayImg').attr("src", randomFakeImg + d.getTime()); 
     }
+};
+    imgAttribute();
 
+    $('button').on ('click', function(){
+        imgAttribute();
+    })
 });
 //for MVP purposes. lets make it a 1 image on the page w/ two button  classes (choice real, choice fake)
 
 //let randNum=Math.random()
 
 // 
+
+
