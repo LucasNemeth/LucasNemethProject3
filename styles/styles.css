@@ -271,16 +271,26 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.mainImages .option1,
-.mainImages .option2 {
+.mainImages .options {
   width: calc(50% - 60px);
   margin: 0 15px;
 }
 
 header p {
   text-align: center;
+}
+
+.choices {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 button {
