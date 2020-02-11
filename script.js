@@ -1,4 +1,55 @@
-const myApp ={};
+const imgSource = () => {
+    //keeping our image arrays. we can re-use these whenever we want.    i hope
+    const realImg = [
+        "./assets/reals/placeholder1.jpg",
+        "./assets/reals/placeholder2.jpg",
+        "./assets/reals/placeholder3.jpg",
+        "./assets/reals/real1.jpg",
+        "./assets/reals/placeholder4.jpg",
+        "./assets/reals/placeholder5.jpg",
+        "./assets/reals/real2.jpg",
+        "./assets/reals/real3.jpg"
+    ]
+    const fakeImg = [
+        "./assets/fakes/img1.jpg",
+        "./assets/fakes/img2.jpg",
+        "./assets/fakes/img3.jpg",
+        "./assets/fakes/img4.jpg",
+        "./assets/fakes/img5.jpg",
+        "./assets/fakes/img6.jpg",
+        "./assets/fakes/cat1.jpg",
+        "./assets/fakes/cat2.jpg",
+    ]
+    let imgChance = Math.floor(Math.random() * 10);
+    let randomRealImg = Math.floor(Math.random() * 8);
+    let randomFakeImg = Math.floor(Math.random() * 8);
+
+    if (imgChance >= 5) {
+        $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
+        $('.displayImg').attr("data-auth", "real");
+    } else {
+        $('.displayImg').attr("src", `${fakeImg[randomFakeImg]}`);
+        $('.displayImg').attr("data-auth", "fake");
+    }
+}
+
+const clickEvent = () =>{
+    let score = 0;    
+    const dataAttr = $(this).attr("data-auth") /// NEED TO FIGURE OUT WTF "THIS" IS
+    //I need to figure out how to scope THIS to a click event
+    const test = $(`[data-auth=${dataAttr}]`);
+    console.log(test, dataAttr)
+    
+
+    imgSource();
+    
+}
+
+const myApp = () => {
+    imgSource();
+    
+}
+
 
 // const realImg = [
 //     "./assets/reals/placeholder1.jpg",
@@ -14,59 +65,27 @@ const myApp ={};
 
 
 $(function() {
+    myApp();
     //gathering all the materials. 
-    const realImg = [
-        "./assets/reals/placeholder1.jpg",
-        "./assets/reals/placeholder2.jpg",
-        "./assets/reals/placeholder3.jpg",
-        "./assets/reals/real1.jpg",
-        "./assets/reals/placeholder4.jpg",
-        "./assets/reals/placeholder5.jpg",
-        "./assets/reals/real2.jpg",
-        "./assets/reals/real3.jpg"
-    ]
-    
-    const fakeImg = [
-        "./assets/fakes/img1.jpg",
-        "./assets/fakes/img2.jpg",
-        "./assets/fakes/img3.jpg",
-        "./assets/fakes/img4.jpg",
-        "./assets/fakes/img5.jpg",
-        "./assets/fakes/img6.jpg",
-        "./assets/fakes/cat1.jpg",
-        "./assets/fakes/cat2.jpg",
-    ]
+
     // d = new Date();
     index = 0;
     
-    let imgChance = Math.floor(Math.random() * 10);
-    let randomRealImg = Math.floor(Math.random() * 8);
-    let randomFakeImg = Math.floor(Math.random() * 8);
-    
-    const imgAttribute = (imgChance, randomRealImg, randomFakeImg) => {
-        console.log(imgChance)
-        if (imgChance >=5){
-            $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
-        } else {
-            $('.displayImg').attr("src", `${fakeImg[randomFakeImg]}`); 
-        }
-    };
-    imgAttribute(imgChance, randomRealImg, randomFakeImg);
-
+    $('button').on('click', function (e){
+        e.preventDefault();
+        clickEvent();
+    });
     // for (let index = 0; index < imgAttribute.length; imgChance++) {   
         // console.log(imgAttribute[index])    
     // }
     // const buttonElement = $('.button');
     // console.log(buttonElement)
 
-    $('button').on ('click', function(e){
-        e.preventDefault();
-        console.log(e);
-        imgChance = Math.floor(Math.random() * 10);
-        randomRealImg = Math.floor(Math.random() * 8);
-        randomFakeImg = Math.floor(Math.random() * 8);
-        imgAttribute(imgChance, randomRealImg, randomFakeImg);
-    })
+
+    
+    // const questions = 10;
+    // let questionsAnswered=0;
+
     
 });
 
