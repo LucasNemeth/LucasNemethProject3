@@ -1,4 +1,5 @@
 let currentImg;
+let score= 0
 
 const imgSource = () => {
     //keeping our image arrays. we can re-use these whenever we want.    i hope
@@ -41,16 +42,17 @@ const imgSource = () => {
 
 const clickEvent = function(e){
     e.preventDefault();
-    let score = 0;    
+    
     const dataAttr = $(this).attr("data-auth"); 
-    if (currentImg===dataAttr){
-        score++     
+    if (currentImg===dataAttr){    
+        score++;
+        let htmlToAppend = `<h3>score: ${score}</h3>`;
+            $('h3').html(htmlToAppend)     
     } else{
-    console.log("Wrong")
+        // console.log("wrong")
     }
-    
     console.log(score)
-    
+
 
     imgSource();
     
