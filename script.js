@@ -1,53 +1,99 @@
-$(function() {
-    let index= Math.floor(Math.random() * 20);
-
-        d=new Date();
-    
-    // let index=0;
-    let randNum=Math.random();
-    let randomImg = "https://www.thispersondoesnotexist.com/image?";
-    $('.displayImg').attr("src", randomImg + d.getTime());
-    // $('.secondImg').attr("src", randomImg + d.getTime())
-
-
-
-    let realImg = [
-        "/assets/reals/real2.jpg",
-        "/assets/reals/placeholder1.jpg",
-        "/assets/reals/real1.jpg",
-        "/assets/reals/real3.jpeg.jpg",
-        "/assets/reals/placeholder5.jpg"
+const imgSource = () => {
+    //keeping our image arrays. we can re-use these whenever we want.    i hope
+    const realImg = [
+        "./assets/reals/placeholder1.jpg",
+        "./assets/reals/placeholder2.jpg",
+        "./assets/reals/placeholder3.jpg",
+        "./assets/reals/real1.jpg",
+        "./assets/reals/placeholder4.jpg",
+        "./assets/reals/placeholder5.jpg",
+        "./assets/reals/real2.jpg",
+        "./assets/reals/real3.jpg"
     ]
+    const fakeImg = [
+        "./assets/fakes/img1.jpg",
+        "./assets/fakes/img2.jpg",
+        "./assets/fakes/img3.jpg",
+        "./assets/fakes/img4.jpg",
+        "./assets/fakes/img5.jpg",
+        "./assets/fakes/img6.jpg",
+        "./assets/fakes/cat1.jpg",
+        "./assets/fakes/cat2.jpg",
+    ]
+    let imgChance = Math.floor(Math.random() * 10);
+    let randomRealImg = Math.floor(Math.random() * 8);
+    let randomFakeImg = Math.floor(Math.random() * 8);
 
+    if (imgChance >= 5) {
+        $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
+        $('.displayImg').attr("data-auth", "real");
+    } else {
+        $('.displayImg').attr("src", `${fakeImg[randomFakeImg]}`);
+        $('.displayImg').attr("data-auth", "fake");
+    }
+}
+
+const clickEvent = () =>{
+    let score = 0;    
+    const dataAttr = $(this).attr("data-auth") /// NEED TO FIGURE OUT WTF "THIS" IS
+    //I need to figure out how to scope THIS to a click event
+    const test = $(`[data-auth=${dataAttr}]`);
+    console.log(test, dataAttr)
     
 
-    function changeImage() {
-        // const img = $('content1','content2').$('img')[0]
-        // img.src = firstImg[index] , secondImg[index];
-        index++;
-        $('.displayImg').attr("src", `${displayImg[index]}`);
-        // $('.secondImg').attr("src", `${secondImg[index]}`);
-        // $('.firstImg')
-        // $('.firstImg').html(`<img class="firstImg" id="content1" src="https://www.thispersondoesnotexist.com/image" alt=""></img>`);
-        // console.log(index);
-    }
-    $('.realButton').on('click', function () {
-        changeImage(randNum);
-   } );
-    $('.fakeButton').on('click', function () {
-        changeImage(randNum);
-    })
+    imgSource();
+    
+}
+
+const myApp = () => {
+    imgSource();
+    
+}
+
+
+// const realImg = [
+//     "./assets/reals/placeholder1.jpg",
+//     "./assets/reals/placeholder2.jpg",
+//     "./assets/reals/placeholder3.jpg",
+//     "./assets/reals/real1.jpg",
+//     "./assets/reals/placeholder4.jpg",
+//     "./assets/reals/placeholder5.jpg",
+//     "./assets/reals/real2.jpg",
+//     "./assets/reals/real3.jpg"
+// ]
+// const randomFakeImg = "https://www.thispersondoesnotexist.com/image?";
+
+
+$(function() {
+    myApp();
+    //gathering all the materials. 
+
+    // d = new Date();
+    index = 0;
+    
+    $('button').on('click', function (e){
+        e.preventDefault();
+        clickEvent();
+    });
+    // for (let index = 0; index < imgAttribute.length; imgChance++) {   
+        // console.log(imgAttribute[index])    
+    // }
+    // const buttonElement = $('.button');
+    // console.log(buttonElement)
+
+
+    
+    // const questions = 10;
+    // let questionsAnswered=0;
+
     
 });
 
-    let fakeImg= (randomImg());
-
-    if (index < 10){
-        $('displayImg') = realImg();
-    } else {
-        $('displayImg') = fakeImg();
-    }
-
 
 //for MVP purposes. lets make it a 1 image on the page w/ two button  classes (choice real, choice fake)
+
 //let randNum=Math.random()
+
+// 
+
+
