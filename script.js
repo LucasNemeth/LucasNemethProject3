@@ -1,5 +1,7 @@
 let currentImg;
-let score= 0
+let score= 0;
+let questions = 10;
+let questionsAnswered=0;
 
 const imgSource = () => {
     //keeping our image arrays. we can re-use these whenever we want.    i hope
@@ -42,21 +44,35 @@ const imgSource = () => {
 
 const clickEvent = function(e){
     e.preventDefault();
-    
+    questionsAnswered++;
+    questions--;
     const dataAttr = $(this).attr("data-auth"); 
     if (currentImg===dataAttr){    
         score++;
-        let htmlToAppend = `<h3>score: ${score}</h3>`;
+        let htmlToAppend = `<h3>score: ${score}/10</h3>`;
             $('h3').html(htmlToAppend)     
     } else{
-        // console.log("wrong")
     }
-    console.log(score)
+    console.log(questions, questionsAnswered)
 
+    endOfQuiz();
 
     imgSource();
     
 }
+
+const endOfQuiz =function(){
+    if (questionsAnswered === 10){
+        $('img').hide();
+        $('button').hide();
+        let endText =`
+            <h3>Congratulations you  got a score of ${score}/10</h3>
+            <button><a ${href="#"}>try again</a><button>
+        `
+            $('h3').html(endText)
+    }
+}
+
 
 const myApp = () => {
     imgSource();

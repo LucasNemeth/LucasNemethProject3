@@ -9,7 +9,7 @@ h1{
     display: flex;
     justify-content: center;
     .options{
-        width: calc(50% - 60px);
+        width: 40%;
         margin:0 15px;
     }
 }
@@ -29,41 +29,31 @@ button{
     border: none;
     background: rgb(228, 20, 90);
     box-shadow: black 2px 2px;
+    border-radius: 25%;
 }
 
 button:hover{
     background: darken($color: hsl(337, 92%, 25%), $amount: 5);;
 }
-
-.main_container {
-  height: 46px;
-  width: auto;
-  padding: 3px;
-  margin: 2px;
-  max-width: 300px;
-  background-color: #555555;
-  align-content: center;
+.imgContain{
+    margin-bottom: 20px;
 }
-.container_inner {
-  height: auto;
-  border: none;
-  background-color: #555555;
-  max-width: 290px;
-  vertical-align: center;
-  padding-top: 12px;
-  padding-left: 10px;
-  align-content: center;
+h1{
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    font-size: 5rem;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
- .num_tiles {
-  width:30px;
-  height: 30px;
-  background-color: #888888;
-  color: #ffffff;
-  font-size: 22px;
-  text-align: center;
-  line-height: 20px;
-  padding: 3px;
-  margin: 1.5px;
-  font-family: verdana;
-  vertical-align: center;
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f83b9a, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
 }
