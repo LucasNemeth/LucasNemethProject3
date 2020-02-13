@@ -13,7 +13,9 @@ const imgSource = () => {
         "./assets/reals/placeholder4.jpg",
         "./assets/reals/placeholder5.jpg",
         "./assets/reals/real2.jpg",
-        "./assets/reals/real3.jpg"
+        "./assets/reals/real3.jpg",
+        "./assets/reals/real4.jpg",
+        "./assets/reals/real5.jpg"
     ]
     const fakeImg = [
         "./assets/fakes/img1.jpg",
@@ -22,12 +24,14 @@ const imgSource = () => {
         "./assets/fakes/img4.jpg",
         "./assets/fakes/img5.jpg",
         "./assets/fakes/img6.jpg",
+        "./assets/fakes/img7.jpg",
+        "./assets/fakes/img8.jpg",
         "./assets/fakes/cat1.jpg",
         "./assets/fakes/cat2.jpg",
     ]
     let imgChance = Math.floor(Math.random() * 10);
-    let randomRealImg = Math.floor(Math.random() * 8);
-    let randomFakeImg = Math.floor(Math.random() * 8);
+    let randomRealImg = Math.floor(Math.random() * 10);
+    let randomFakeImg = Math.floor(Math.random() * 10);
 
     if (imgChance >= 5) {
         $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
