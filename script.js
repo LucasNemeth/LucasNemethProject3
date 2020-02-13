@@ -67,9 +67,13 @@ const endOfQuiz =function(){
         $('button').hide();
         let endText =`
             <h3>Congratulations you  got a score of ${score}/10</h3>
-            <button><a ${href="#"}>try again</a><button>
+            <button><a ${href="#", id="tryAgain"}>try again</a></button>
         `
             $('h3').html(endText)
+            
+        $('button').on('click', function(){
+            location.reload()
+        })
     }
 }
 

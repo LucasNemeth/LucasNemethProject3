@@ -37,6 +37,15 @@ button:hover{
 }
 .imgContain{
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+img{
+    width: 100%;
+    box-shadow: 0px -20px 20px #f853a6, #e60073 0px 20px 20px;
+    border-radius: 25%;
+    max-height: 300px;
+    width: auto;
 }
 h1{
     font-family: 'Fjalla One', sans-serif;
