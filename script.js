@@ -32,18 +32,7 @@ const imgSource = () => {
     let imgChance = Math.floor(Math.random() * 10);
     let randomRealImg = Math.floor(Math.random() * 10);
     let randomFakeImg = Math.floor(Math.random() * 10);
-// 
-// .attr("alt", "Woman with glasses in blazer")
-//     .attr("alt", "woman smiling in the sunlight")
-//     .attr("alt", "Man with glasses in a dress shirt")
-//     .attr("alt", "Man with beard and wide brimmed hat")
-//     .attr("alt",
-//         "Woman smiling in front of yellow background")
-//     .attr("alt", "Woman with glasses and ponytail")
-//     .attr("alt", "smiling man with glasses walking outside")
-//     .attr("alt", "bald man with mustache")
-//     .attr("alt", "composer, Richard D James")
-//     .attr("alt", "a screaming black cat")
+
     if (imgChance >= 5) {
         $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
         $('.displayImg').attr("data-auth", "real");
