@@ -32,11 +32,23 @@ const imgSource = () => {
     let imgChance = Math.floor(Math.random() * 10);
     let randomRealImg = Math.floor(Math.random() * 10);
     let randomFakeImg = Math.floor(Math.random() * 10);
-
+// 
+// .attr("alt", "Woman with glasses in blazer")
+//     .attr("alt", "woman smiling in the sunlight")
+//     .attr("alt", "Man with glasses in a dress shirt")
+//     .attr("alt", "Man with beard and wide brimmed hat")
+//     .attr("alt",
+//         "Woman smiling in front of yellow background")
+//     .attr("alt", "Woman with glasses and ponytail")
+//     .attr("alt", "smiling man with glasses walking outside")
+//     .attr("alt", "bald man with mustache")
+//     .attr("alt", "composer, Richard D James")
+//     .attr("alt", "a screaming black cat")
     if (imgChance >= 5) {
         $('.displayImg').attr("src", `${realImg[randomRealImg]}`);
         $('.displayImg').attr("data-auth", "real");
         currentImg="real";
+        
     } else {
         $('.displayImg').attr("src", `${fakeImg[randomFakeImg]}`);
         $('.displayImg').attr("data-auth", "fake");
@@ -78,7 +90,14 @@ const endOfQuiz =function(){
         $('button').on('click', function(){
             location.reload()
         })
-    }
+        if (score===10){
+            if (confirm("Congratulations for a perfect score! Are you sure you're not a robot? Press ok to confirm")) {
+                txt = "I am definitely a human being.";
+            } else {
+                txt = "Beep Boop!";
+            } 
+        }
+    }   
 }
 
 
@@ -91,39 +110,11 @@ const myApp = () => {
 
 $(function() {
     myApp();
-    //gathering all the materials. 
 
-    // d = new Date();
     index = 0;
     
     $('button').on('click', clickEvent);
-    
-
-    // imgSource();
-    // if ((clickEvent === real) && (imgSource === realImg)){
-    //     console.log('hello')
-    // }
-
-
-    // for (let index = 0; index < imgAttribute.length; imgChance++) {   
-        // console.log(imgAttribute[index])    
-    // }
-    // const buttonElement = $('.button');
-    // console.log(buttonElement)
-
-
-    
-    // const questions = 10;
-    // let questionsAnswered=0;
-
-    
+  
 });
-
-
-//for MVP purposes. lets make it a 1 image on the page w/ two button  classes (choice real, choice fake)
-
-//let randNum=Math.random()
-
-// 
 
 

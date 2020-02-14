@@ -14,7 +14,8 @@ html{
     line-height: 1.5;
     font-family: 'Ubuntu', sans-serif;
     font-size: 62.5%;
-    background:#1b0113;
+    background: rgb(27,1,19);
+    background: linear-gradient(40deg, rgba(27,1,19,1) 48%, rgba(113,43,80,1) 97%); 
     color: #f853a6;
 }
 h3{
