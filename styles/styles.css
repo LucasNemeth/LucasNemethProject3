@@ -247,13 +247,22 @@ html {
   font-size: 62.5%;
   background: #1b0113;
   background: linear-gradient(40deg, #1b0113 48%, #712b50 97%);
-  color: #f853a6;
+  color: #d5e5b6;
+}
+
+h1 {
+  margin: 0;
 }
 
 h3 {
   font-family: 'Ubuntu', sans-serif;
   font-size: 2rem;
   text-align: center;
+  margin-top: 0;
+}
+
+a {
+  color: bisque;
 }
 
 .wrapper {
@@ -265,6 +274,14 @@ h3 {
 p {
   font-size: 1.6rem;
   text-align: center;
+}
+
+.counter h3 {
+  font-size: 1.6rem;
+}
+
+.choices {
+  margin-bottom: 15px;
 }
 
 @media (max-width: 670px) {
